@@ -2,4 +2,42 @@
   width: 1440px;
   height: 700px;
   background-image: url(../../assets/img/HeroDesc-min.jpg);
+  margin: 0 auto;
+}
+.container {
+  width: 783px;
+  height: 204px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 436px;
+  margin: 0 auto;
+}
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+}
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  text-align: center;
+  color: #fff;
+}
+.catalogBtn {
+  margin-top: 40px;
+  border-radius: 12px;
+  padding: 12px 88px;
+  width: 276px;
+  height: 44px;
+  background: #3470ff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }

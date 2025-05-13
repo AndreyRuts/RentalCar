@@ -1,0 +1,53 @@
+.cardContainer {
+  width: 276px;
+  height: 424px;
+  margin-bottom: 15px;
+}
+.cardImg {
+  width: 276px;
+  height: 268px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.cardInfo {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8d929a;
+  margin-bottom: 4px;
+}
+.stringContainer {
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.carNameInfo {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.cardModelBlue {
+  color: #3470ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.cardText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+.detailsBtn {
+  margin-top: 28px;
+  border-radius: 12px;
+  padding: 12px 88px;
+  width: 276px;
+  height: 44px;
+  background: #3470ff;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+}
