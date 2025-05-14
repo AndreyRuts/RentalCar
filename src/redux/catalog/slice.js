@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCarsThunk } from "./operations";
+import { fetchCarsThunk, fetchCarByIdThunk } from "./operations";
 
 const initialState = {
     items: [],
+    selectedCar: null,
     isLoading: false,
     error: null
 }
@@ -19,6 +20,11 @@ const statusPending = (state) => {
 const carsSlice = createSlice({
     name: 'cars',
     initialState,
+    reducers: {
+        clearSelectedCar: (state) => {
+            state.selectedCar = null;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchCarsThunk.pending, statusPending)
@@ -27,6 +33,12 @@ const carsSlice = createSlice({
                 state.items = action.payload;
                 state.isLoading = false;
                 state.error = null;
+            })
+            .addCase(fetchCarByIdThunk.pending, statusPending)
+            .addCase(fetchCarByIdThunk.rejected, statusRejected) // migth change to state.error = action.error.message
+            .addCase(fetchCarByIdThunk.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.selectedCar = action.payload;
             })
     }
 })

@@ -1,9 +1,11 @@
+import CarDetails from "../../components/CarDetails/CarDetails"
+
 function DetailsPage() {
 
     return (
       <>
         <div>
-            Details Page
+            <CarDetails/>
         </div>
       </>
     )

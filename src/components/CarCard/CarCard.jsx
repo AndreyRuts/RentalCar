@@ -1,14 +1,17 @@
-import s from './CarCard.module.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function CarCard({ img, brand, year, model, type, rentalPrice, rentalCompany, mileage, address }) {
+import s from './CarCard.module.css';
+
+function CarCard({ id, img, brand, year, model, type, rentalPrice, rentalCompany, mileage, address }) {
     const arr = address;
     const city = arr.split(' ');
 
-    const navigate = useNavigate();
-    const redirectToDetails = () => {
-    navigate('/details');
-    }
+    // const navigate = useNavigate();
+    // const redirectToDetails = () => {
+    // navigate('/details');
+    // }
+    
 
     return (
         <>
@@ -24,7 +27,7 @@ function CarCard({ img, brand, year, model, type, rentalPrice, rentalCompany, mi
                 </div>
                 <p className={s.cardInfo}>{city[3].slice(0, -1)} | {city[4]} | {rentalCompany} |</p>
                 <p className={s.cardInfo}>{type} | {mileage}</p>
-                <button className={s.detailsBtn} onClick={redirectToDetails}>Read More</button>
+                <Link to={`/catalog/${id}`} className={s.detailsBtn}>Read More</Link>
             </li>
         </>
     )

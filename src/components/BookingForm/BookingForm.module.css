@@ -1,0 +1,69 @@
+.wrapper {
+  width: 640px;
+  height: 488px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 576px;
+  margin: 0 auto;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  padding-top: 32px;
+  padding-left: 32px;
+  margin-bottom: 8px;
+}
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+  padding-left: 32px;
+  margin-bottom: 24px;
+}
+.input {
+  width: 576px;
+  height: 48px;
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: #f7f7f7;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+.inputComment {
+  width: 576px;
+  height: 88px;
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: #f7f7f7;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+.formBtn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: #3470ff;
+  border: none;
+  margin-top: 24px;
+  margin-left: 242px;
+  margin-bottom: 32px;
+}
