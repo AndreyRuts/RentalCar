@@ -39,6 +39,7 @@
   color: #101828;
 }
 .detailsBtn {
+  display: block;
   margin-top: 28px;
   border-radius: 12px;
   padding: 12px 88px;
@@ -50,4 +51,5 @@
   font-size: 16px;
   line-height: 1.25;
   color: #fff;
+  text-decoration: none;
 }

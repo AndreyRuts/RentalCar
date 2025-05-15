@@ -1,0 +1,11 @@
+.wrapper {
+  width: 1200px;
+  height: 208px;
+  margin: 0 auto;
+}
+.searchBoxContainer {
+  width: 924px;
+  height: 68px;
+  margin: 0 auto;
+  padding-top: 84px;
+}

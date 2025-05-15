@@ -9,20 +9,23 @@ import {
     REGISTER,
   } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { configureStore } from "@reduxjs/toolkit";
-import { combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
   
 import { carsReducer } from './catalog/slice';
+import filtersReducer from './filters/slice';
+import optionsReducer from './filterOptions/slice';
 
 
 const rootReducer = combineReducers({
-    cars: carsReducer,
+  cars: carsReducer,
+  filters: filtersReducer,
+  options: optionsReducer
 });  
   
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['favorites', 'orders'],
+    whitelist: []
 };
   
 const persistedReducer = persistReducer(persistConfig, rootReducer);

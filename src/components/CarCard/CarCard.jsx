@@ -1,4 +1,3 @@
-// import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import s from './CarCard.module.css';
@@ -6,12 +5,6 @@ import s from './CarCard.module.css';
 function CarCard({ id, img, brand, year, model, type, rentalPrice, rentalCompany, mileage, address }) {
     const arr = address;
     const city = arr.split(' ');
-
-    // const navigate = useNavigate();
-    // const redirectToDetails = () => {
-    // navigate('/details');
-    // }
-    
 
     return (
         <>
