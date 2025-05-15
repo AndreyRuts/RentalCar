@@ -4,7 +4,9 @@ const initialState = {
     brand: '',
     rentalPrice: '',
     mileageFrom: '',
-    mileageTo: ''
+    mileageTo: '',
+    brandList: [],
+    rentalPriceList: []
 };
 
 const filtersSlice = createSlice({
@@ -25,6 +27,12 @@ const filtersSlice = createSlice({
         },
         resetFilters() {
             return initialState;
+        },
+        setBrandList(state, action) {
+            state.brandList = action.payload;
+        },
+        setRentalPriceList(state, action) {
+            state.rentalPriceList = action.payload;
         }
     }
 });
@@ -34,7 +42,9 @@ export const {
     setRentalPrice,
     setMileageTo,
     setMileageFrom,
-    resetFilters
+    resetFilters,
+    setBrandList,
+    setRentalPriceList
 } = filtersSlice.actions;
 
 export default filtersSlice.reducer;

@@ -13,13 +13,11 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
   
 import { carsReducer } from './catalog/slice';
 import filtersReducer from './filters/slice';
-import optionsReducer from './filterOptions/slice';
 
 
 const rootReducer = combineReducers({
   cars: carsReducer,
   filters: filtersReducer,
-  options: optionsReducer
 });  
   
 const persistConfig = {

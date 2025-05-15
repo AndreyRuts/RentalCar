@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCarsThunk, fetchCarByIdThunk } from "./operations";
+import { fetchFilteredCarsThunk } from "../filters/operations";
 
 const initialState = {
     items: [],
@@ -40,6 +41,13 @@ const carsSlice = createSlice({
                 state.isLoading = false;
                 state.selectedCar = action.payload;
             })
+            .addCase(fetchFilteredCarsThunk.pending, statusPending)
+            .addCase(fetchFilteredCarsThunk.rejected, statusRejected)
+            .addCase(fetchFilteredCarsThunk.fulfilled, (state, action) => {
+                state.items = action.payload;
+                state.isLoading = false;
+                state.error = null;
+            });
     }
 })
 

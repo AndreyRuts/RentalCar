@@ -3,51 +3,73 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     setBrand,
     setRentalPrice,
-    setMileageFrom,
     setMileageTo,
+    setMileageFrom,
     resetFilters
 } from '../../redux/filters/slice';
-import { selectFilters } from '../../redux/filters/selectors';
-import { selectBrands, selectRentalPrices } from '../../redux/filterOptions/selectors';
+import { selectFilters, selectBrandList, selectRentalPrice } from '../../redux/filters/selectors';
 import { fetchFilteredCarsThunk } from '../../redux/filters/operations';
 
 import s from './SearchBox.module.css';
 
+
 function SearchBox() {
     const dispatch = useDispatch();
+    const brands = useSelector(selectBrandList);
+    const prices = useSelector(selectRentalPrice);
     const filters = useSelector(selectFilters);
-    const brands = useSelector(selectBrands);
-    console.log(brands);
-    
-    const rentalPrices = useSelector(selectRentalPrices);
 
-    const handleApply = () => {
-        const appliedFilters = {};
-        if (filters.brand) appliedFilters.brand = filters.brand;
-        if (filters.rentalPrice) appliedFilters.rentalPrice = filters.rentalPrice;
-        if (filters.mileageFrom) appliedFilters.mileageFrom = filters.mileageFrom;
-        if (filters.mileageTo) appliedFilters.mileageTo = filters.mileageTo;
-        dispatch(fetchFilteredCarsThunk(appliedFilters));
-        dispatch(resetFilters());
+    const handleSearch = () => {
+        dispatch(fetchFilteredCarsThunk(filters));
     };
-
+    
     return (
         <>
             <div className={s.wrapper}>
                 <div className={s.searchBoxContainer}>
-                <select
-                    value={filters?.brand}
-                    onChange={(e) => dispatch(setBrand(e.target.value))}
-                >
-                    <option value="">All</option>
-                    {brands?.map((brand) => (
-                        <option key={brand} value={brand}>{brand}</option>
-                    ))}
-                </select>
+                    <label>
+                        Car brand
+                        <select value={filters.brand} onChange={(e) => dispatch(setBrand(e.target.value))}>
+                            <option value="">Choose a brand</option>
+                            {brands.map((brand) => (
+                                <option key={brand} value={brand}>{brand}</option>
+                            ))}
+                        </select>
+                    </label>
+
+                    <label>
+                        Price / 1 hour
+                        <select value={filters.rentalPrice} onChange={(e) => dispatch(setRentalPrice(e.target.value))}>
+                            <option value="">Choose a price</option>
+                            {prices.map(price => (
+                                <option key={price} value={price}>${price}</option>
+                            ))}
+                        </select>
+                    </label>
+
+                    <label>
+                        Car mileage / km
+                        <div className={s.mileageInputs}>
+                            <input
+                                type="number"
+                                placeholder="From"
+                                value={filters.mileageFrom}
+                                onChange={(e) => dispatch(setMileageFrom(e.target.value))}
+                            />
+                            <input
+                                type="number"
+                                placeholder="To"
+                                value={filters.mileageTo}
+                                onChange={(e) => dispatch(setMileageTo(e.target.value))}
+                            />
+                        </div>
+                    </label>
+
+                    <button onClick={handleSearch}>Search</button>
                 </div>
             </div>
         </>
-    )
+    );
   }
   
 export default SearchBox;
