@@ -6,6 +6,7 @@ import { fetchCarByIdThunk } from "../../redux/catalog/operations";
 import { selectSelectedCar } from "../../redux/catalog/selectors";
 
 import BookingForm from "../BookingForm/BookingForm";
+import Loader from "../Loader/Loader";
 
 import s from './CarDetails.module.css';
 
@@ -21,7 +22,7 @@ const CarDetails = () => {
         dispatch(fetchCarByIdThunk(id));
     }, [dispatch, id]);
     
-    if (!car) return <p>Loading...</p> // starnge thing might delete
+    if (!car) return <Loader loading={true}/> // starnge thing might delete
 
     return (
         <>

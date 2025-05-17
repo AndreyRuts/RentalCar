@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavorites, removeFromFavorites } from "../../redux/favorites/slice";
 import { Link } from "react-router-dom";
+
+import { addToFavorites, removeFromFavorites } from "../../redux/favorites/slice";
+
 import s from './CarCard.module.css';
+
 
 function CarCard({ id, img, brand, year, model, type, rentalPrice, rentalCompany, mileage, address }) {
   const dispatch = useDispatch();
