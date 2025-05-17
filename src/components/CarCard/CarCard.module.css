@@ -2,6 +2,7 @@
   width: 276px;
   height: 424px;
   margin-bottom: 15px;
+  position: relative;
 }
 .cardImg {
   width: 276px;
@@ -52,4 +53,15 @@
   line-height: 1.25;
   color: #fff;
   text-decoration: none;
+}
+.favoriteBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #3f3f3f;
+  transition: transform 0.2s ease;
 }

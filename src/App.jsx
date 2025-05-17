@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 
 import CatalogPage from "./pages/CatalogPage/CatalogPage"
 import DetailsPage from "./pages/DetailsPage/DetailsPage"
@@ -19,6 +20,7 @@ function App() {
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </Layout>
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   )
 }
