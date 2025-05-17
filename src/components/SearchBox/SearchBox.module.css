@@ -8,4 +8,102 @@
   height: 68px;
   margin: 0 auto;
   padding-top: 84px;
+  display: flex;
+  gap: 16px;
+}
+.labelBox {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8d929a;
+}
+.select {
+  margin-top: 8px;
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: 204px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  border: none;
+  background: #f7f7f7;
+  appearance: none;
+  cursor: pointer;
+}
+.select:focus,
+.select:active {
+  outline: none;
+}
+.mileageInputs {
+  display: flex;
+}
+.inputFrom {
+  margin-top: 8px;
+  border-right: 1px solid #dadde1;
+  border-radius: 12px 0 0 12px;
+  width: 160px;
+  height: 44px;
+  border: none;
+  border-right: 1px solid #dadde1;
+  background: #f7f7f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  padding-left: 24px;
+}
+.inputFrom:focus,
+.inputFrom:active {
+  outline: none;
+}
+.inputTo {
+  margin-top: 8px;
+  border-radius: 0 12px 12px 0;
+  width: 160px;
+  height: 44px;
+  border: none;
+  background: #f7f7f7;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  padding-left: 24px;
+}
+.inputTo:focus,
+.inputTo:active {
+  outline: none;
+}
+.searchBtn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: #3470ff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  margin-top: 24px;
+}
+.options {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+.selectWithIcon {
+  position: relative;
+}
+.arrow {
+  position: absolute;
+  top: 55%;
+  right: 12px;
+  fill: #121417;
+  pointer-events: none;
+  transform: translateY(-50%);
 }

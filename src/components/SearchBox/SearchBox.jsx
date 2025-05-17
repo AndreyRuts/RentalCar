@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import {
     setBrand,
@@ -18,6 +19,11 @@ function SearchBox() {
     const brands = useSelector(selectBrandList);
     const prices = useSelector(selectRentalPrice);
     const filters = useSelector(selectFilters);
+    
+    const [isBrandOpen, setIsBrandOpen] = useState(false);
+    const [isPriceOpen, setIsPriceOpen] = useState(false);
+    const toggleBrandOpen = (val) => setIsBrandOpen(val);
+    const togglePriceOpen = (val) => setIsPriceOpen(val);
 
     const handleSearch = () => {
         dispatch(fetchFilteredCarsThunk(filters));
@@ -27,36 +33,62 @@ function SearchBox() {
         <>
             <div className={s.wrapper}>
                 <div className={s.searchBoxContainer}>
-                    <label>
+                    <label className={s.labelBox}>
                         Car brand
-                        <select value={filters.brand} onChange={(e) => dispatch(setBrand(e.target.value))}>
-                            <option value="">Choose a brand</option>
-                            {brands.map((brand) => (
-                                <option key={brand} value={brand}>{brand}</option>
-                            ))}
-                        </select>
+                        <div className={s.selectWithIcon}>
+                            <select
+                                className={s.select}
+                                value={filters.brand}
+                                onFocus={() => toggleBrandOpen(true)}
+                                onBlur={() => setIsBrandOpen(false)}  
+                                onChange={(e) => {
+                                    dispatch(setBrand(e.target.value));
+                                    e.target.blur();
+                                }}>
+                                <option value="" disabled hidden>Choose a brand</option>
+                                {brands.map((brand) => (
+                                    <option className={s.options} key={brand} value={brand}>{brand}</option>
+                                ))}
+                            </select>
+                            <svg className={s.arrow} width="13" height="7" viewBox="0 0 13 7">
+                                <use href={`/sprite.svg#${isBrandOpen ? 'searchArrowUp' : 'searchArrowDown'}`}></use>
+                            </svg>
+                        </div>
                     </label>
 
-                    <label>
+                    <label className={s.labelBox}>
                         Price / 1 hour
-                        <select value={filters.rentalPrice} onChange={(e) => dispatch(setRentalPrice(e.target.value))}>
-                            <option value="">Choose a price</option>
-                            {prices.map(price => (
-                                <option key={price} value={price}>${price}</option>
-                            ))}
-                        </select>
+                        <div className={s.selectWithIcon}>
+                            <select
+                                className={s.select}
+                                value={filters.rentalPrice}
+                                onFocus={() => togglePriceOpen(true)}
+                                onBlur={() => setIsPriceOpen(false)} 
+                                onChange={(e) => {
+                                    dispatch(setRentalPrice(e.target.value));
+                                    e.target.blur();
+                                }}>
+                                <option value="" disabled hidden>Choose a price</option>
+                                {prices.map(price => (
+                                    <option className={s.options} key={price} value={price}>${price}</option>
+                                ))}
+                            </select>
+                            <svg className={s.arrow} width="13" height="7" viewBox="0 0 13 7">
+                                <use href={`/sprite.svg#${isPriceOpen ? 'searchArrowUp' : 'searchArrowDown'}`}></use>
+                            </svg>
+                        </div>
                     </label>
 
-                    <label>
+                    <label className={s.labelBox}>
                         Car mileage / km
                         <div className={s.mileageInputs}>
-                            <input
+                            <input className={s.inputFrom}
                                 type="number"
                                 placeholder="From"
                                 value={filters.mileageFrom}
                                 onChange={(e) => dispatch(setMileageFrom(e.target.value))}
                             />
-                            <input
+                            <input className={s.inputTo}
                                 type="number"
                                 placeholder="To"
                                 value={filters.mileageTo}
@@ -65,7 +97,7 @@ function SearchBox() {
                         </div>
                     </label>
 
-                    <button onClick={handleSearch}>Search</button>
+                    <button className={s.searchBtn} onClick={handleSearch}>Search</button>
                 </div>
             </div>
         </>
