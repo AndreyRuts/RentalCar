@@ -19,7 +19,7 @@ function SearchBox() {
     const brands = useSelector(selectBrandList);
     const prices = useSelector(selectRentalPrice);
     const filters = useSelector(selectFilters);
-    
+   
     const [isBrandOpen, setIsBrandOpen] = useState(false);
     const [isPriceOpen, setIsPriceOpen] = useState(false);
     const toggleBrandOpen = (val) => setIsBrandOpen(val);

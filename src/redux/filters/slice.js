@@ -14,7 +14,7 @@ const filtersSlice = createSlice({
     initialState,
     reducers: {
         setBrand(state, action) {
-            state.brand = action.payload;
+            state.brand = action.payload;       
         },
         setRentalPrice(state, action) {
             state.rentalPrice = action.payload;

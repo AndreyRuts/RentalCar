@@ -3,11 +3,16 @@ import { fetchCarsThunk, fetchCarByIdThunk } from "./operations";
 import { fetchFilteredCarsThunk } from "../filters/operations";
 
 const initialState = {
-    items: [],
+    items: {
+      cars: [],
+      totalCars: 0,
+      page: 1,
+      totalPages: 1,
+    },
     selectedCar: null,
     isLoading: false,
     error: null
-}
+  };
 
 const statusRejected = (state, action) => {
     state.isLoading = false;
@@ -36,7 +41,7 @@ const carsSlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchCarByIdThunk.pending, statusPending)
-            .addCase(fetchCarByIdThunk.rejected, statusRejected) // migth change to state.error = action.error.message
+            .addCase(fetchCarByIdThunk.rejected, statusRejected)
             .addCase(fetchCarByIdThunk.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.selectedCar = action.payload;

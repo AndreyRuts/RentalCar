@@ -29,7 +29,7 @@ export const fetchFilteredCarsThunk = createAsyncThunk(
       const response = await axios.get(
         `https://car-rental-api.goit.global/cars?${params.toString()}`
       );
-
+      
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

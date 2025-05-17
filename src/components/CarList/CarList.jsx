@@ -11,7 +11,7 @@ function CarList() {
     return (
         <>
             <ul className={s.container}>
-                {cars.cars?.map(item => (<CarCard key={item.id} {...item} />))}
+                {cars?.map(item => (<CarCard key={item.id} {...item} />))}
             </ul>
         </>
     )
