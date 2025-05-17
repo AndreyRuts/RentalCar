@@ -8,7 +8,7 @@ function AppBar() {
         <>
             <div className={s.headerContainer}>
                 <svg viewBox="0 0 104 16" width="104" height="16">
-                    <use href="/public/sprite.svg#logoDesc"></use>
+                    <use href="/sprite.svg#logoDesc"></use>
                 </svg>
                 <Navigation />
             </div>
