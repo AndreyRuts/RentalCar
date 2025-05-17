@@ -1,0 +1,18 @@
+.loadMoreBtn {
+  border: 1px solid #3470ff;
+  border-radius: 12px;
+  width: 156px;
+  height: 44px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  margin: 0 auto;
+  margin-top: 72px;
+  background-color: transparent;
+}

@@ -13,17 +13,19 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
   
 import { carsReducer } from './catalog/slice';
 import filtersReducer from './filters/slice';
+import { favoritesReducer } from './favorites/slice';
 
 
 const rootReducer = combineReducers({
   cars: carsReducer,
   filters: filtersReducer,
+  favorites: favoritesReducer
 });  
   
 const persistConfig = {
-    key: 'root',
+    key: 'favorites',
     storage,
-    whitelist: []
+    whitelist: ['favorites']
 };
   
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,20 +1,14 @@
-import { useSelector } from "react-redux";
-
-import { selectAllCars } from "../../redux/catalog/selectors";
-
 import CarCard from "../CarCard/CarCard";
 import s from './CarList.module.css';
 
-function CarList() {
-    const cars = useSelector(selectAllCars);
-
-    return (
-        <>
-            <ul className={s.container}>
-                {cars?.map(item => (<CarCard key={item.id} {...item} />))}
-            </ul>
-        </>
-    )
+function CarList({ cars, listRef }) {
+  return (
+    <ul className={s.container} ref={listRef}>
+      {cars?.map((item) => (
+        <CarCard key={item.id} {...item} />
+      ))}
+    </ul>
+  );
 }
-  
-export default CarList
+
+export default CarList;

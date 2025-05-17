@@ -36,10 +36,21 @@ const carsSlice = createSlice({
             .addCase(fetchCarsThunk.pending, statusPending)
             .addCase(fetchCarsThunk.rejected, statusRejected)
             .addCase(fetchCarsThunk.fulfilled, (state, action) => {
-                state.items = action.payload;
-                state.isLoading = false;
-                state.error = null;
+              const { data, page } = action.payload;
+            
+              if (page === 1) {
+                state.items.cars = data.cars;
+              } else {
+                state.items.cars.push(...data.cars);
+              }
+              state.items.totalCars = data.totalCars;
+              state.items.totalPages = data.totalPages;
+              state.items.page = page;
+            
+              state.isLoading = false;
+              state.error = null;
             })
+            
             .addCase(fetchCarByIdThunk.pending, statusPending)
             .addCase(fetchCarByIdThunk.rejected, statusRejected)
             .addCase(fetchCarByIdThunk.fulfilled, (state, action) => {
