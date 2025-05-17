@@ -30,7 +30,7 @@ function CarCard({ id, img, brand, year, model, type, rentalPrice, rentalCompany
         <p className={s.cardText}>${rentalPrice}</p>
       </div>
       <p className={s.cardInfo}>{city[3].slice(0, -1)} | {city[4]} | {rentalCompany} |</p>
-      <p className={s.cardInfo}>{type} | {mileage}</p>
+      <p className={s.cardInfo}>{type} | {mileage.toLocaleString('en-US').replace(/,/g, ' ')} km</p>
       <Link to={`/catalog/${id}`} className={s.detailsBtn}>Read More</Link>
       <button onClick={handleFavoriteClick} className={s.favoriteBtn}>
               {isFavorite ? 
