@@ -1,12 +1,64 @@
-# React + Vite
+**RentalCar** — це React-додаток для перегляду та бронювання орендованих авто. Проєкт розроблений з використанням React, Redux Toolkit, React Router, Axios та redux-persist. Користувач може фільтрувати авто за різними параметрами, переглядати детальну інформацію, а також додавати авто в обране.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚘 Функціонал
 
-Currently, two official plugins are available:
+- Перегляд каталогу авто з пагінацією.
+- Фільтрація за брендом, ціною та пробігом.
+- Перегляд детальної інформації про авто.
+- Додавання/видалення авто з обраного (зберігається локально).
+- Форма бронювання на сторінці деталей.
+- Асинхронне завантаження даних з індикатором завантаження.
+- Клієнтська маршрутизація з підтримкою прямих посилань.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Технології
 
-## Expanding the ESLint configuration
+- React + Vite
+- Redux Toolkit + redux-persist
+- React Router
+- Axios
+- react-hot-toast
+- react-spinners
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Встановлення
+
+Клонуйте репозиторій
+
+- git clone https://github.com/your-username/rental-car.git
+- npm install
+- npm run dev
+- http://localhost:5173/
+- Проєкт задеплоєний на Vercel: https://rental-car-three-flax.vercel.app
+
+## Автор - Андрій Руць (FullStack Developer)
+
+**RentalCar** is a React application for browsing and booking rental cars. The project is developed using React, Redux Toolkit, React Router, Axios, and redux-persist. It allows users to filter cars by various criteria, view detailed information, and add cars to their favorites.
+
+## 🚘 Features
+
+- Browse a catalog of rental cars with pagination.
+- Filter by brand, price, and mileage.
+- View detailed information about each car.
+- Add or remove cars from the favorites list (saved in local storage).
+- Booking form on the details page.
+- Data loading with async thunks and loading spinners.
+- Client-side routing with proper handling of deep links.
+
+## 🛠 Technologies
+
+- React + Vite
+- Redux Toolkit + redux-persist
+- React Router
+- Axios
+- react-hot-toast
+- react-spinners
+
+## 🚀 Installation
+
+- Clone the repository:
+  git clone https://github.com/your-username/rental-car.git
+- npm install
+- npm run dev
+- http://localhost:5173/
+- The project is deployed on Vercel: https://rental-car-three-flax.vercel.app
+
+## Author - Andrii Ruts (FullStack Developer)
