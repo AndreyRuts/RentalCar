@@ -29,6 +29,7 @@ function SearchBox() {
         dispatch(fetchFilteredCarsThunk(filters));
     };
     
+    
     return (
         <>
             <div className={s.wrapper}>
